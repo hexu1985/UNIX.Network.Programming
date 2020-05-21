@@ -1,6 +1,6 @@
 ### UNIX网络编程 卷一 卷二 示例代码
 
-编译方法：
+#### 编译方法：
 
 - 首先编译lib
 
@@ -15,3 +15,7 @@ $ make
 $ cd unpv13e # or unpv22e
 $ make
 ```
+
+![封面1](cover1.jpg)
+![封面2](cover2.jpg)
+
