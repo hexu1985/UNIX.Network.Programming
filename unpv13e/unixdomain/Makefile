@@ -5,7 +5,8 @@ CFLAGS = -Wall -g -O2 ${INCLUDE}
 LIBS = ../../lib/libunp.a -lpthread -lrt
 
 PROGS =	daytimetcpcli daytimetcpsrv2 mycat openfile \
-	unixbind unixstrcli01 unixstrserv01 unixdgcli01 unixdgserv01
+	unixbind unixstrcli01 unixstrserv01 unixdgcli01 unixdgserv01 \
+	acpi_listen
 	#tfcred01 unixbind unixstrcli01 unixstrserv01 unixstrserv02
 
 all:	${PROGS}
@@ -43,6 +44,10 @@ unixstrserv01:	unixstrserv01.o sigchldwaitpid.o
 unixstrserv02:	unixstrserv02.o strecho.o sigchldwaitpid.o readcred.o
 		${CC} ${CFLAGS} -o $@ unixstrserv02.o strecho.o sigchldwaitpid.o \
 				readcred.o ${LIBS}
+
+acpi_listen:	acpi_listen.o
+		${CC} ${CFLAGS} -o $@ acpi_listen.o ${LIBS}
+
 
 clean:
 		rm -f ${PROGS} ${CLEANFILES} *.o
